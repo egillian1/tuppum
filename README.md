@@ -1,6 +1,6 @@
 # tuppum
 
-A simple portfolio page, created to be easy to modify and deploy via GitHub pages
+A simple portfolio page, created to be easy to modify and deploy via GitHub pages. See a preview at [the associated GitHub Page](https://egillian1.github.io/tuppum/)
 
 ## Development
 
