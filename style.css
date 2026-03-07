@@ -72,11 +72,76 @@ body {
 /* Layout */
 
 .header-text-wrapper {
+  position: relative;
   padding-left: 20%;
 }
 
 .name-wrapper {
   height: calc(2 * 80px);
+}
+
+.header-animation-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: 20%;
+}
+
+.circle-axis {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-300%, -50%);
+  /* border: solid 1px #aa6e1e; */
+  animation: 18s infinite rotate;
+}
+
+.circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: solid 1px #aa6e1e;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.header-animation-wrapper .circle-axis:nth-child(1) {
+  /* transform-origin: top center; */
+  transform-origin: -100% 50%;
+}
+
+.header-animation-wrapper .circle-axis:nth-child(2) {
+  /* transform-origin: bottom left; */
+  transform-origin: -100% 50%;
+  animation: 18s infinite reverse rotate ease-in-out;
+}
+
+.header-animation-wrapper .circle-axis:nth-child(3) {
+  /* transform-origin: bottom right; */
+  transform-origin: 0% 50%;
+  animation: 18s infinite rotate ease-in-out;
+}
+
+.header-animation-wrapper .circle-axis:nth-child(1) .circle {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+}
+
+.header-animation-wrapper .circle-axis:nth-child(2) .circle {
+  left: 50%;
+  top: 50%;
+  transform: translate(-75%, -50%);
+}
+
+.header-animation-wrapper .circle-axis:nth-child(3) .circle {
+  left: 50%;
+  top: 50%;
+  transform: translate(-25%, -50%);
 }
 
 .subtitle {
@@ -259,6 +324,7 @@ iframe {
   border: 1px solid #aa6e1e;
   border-radius: 50%;
   position: absolute;
+  opacity: 0.5;
 }
 
 .outer-frame .dot:nth-child(2) {
@@ -278,25 +344,25 @@ iframe {
 .inner-frame .dot:nth-child(1) {
   left: 50%;
   top: 0;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -150%);
 }
 
 .inner-frame .dot:nth-child(2) {
   right: 0;
   top: 50%;
-  transform: translate(100%, -50%);
+  transform: translate(150%, -50%);
 }
 
 .inner-frame .dot:nth-child(3) {
   left: 50%;
   bottom: 0;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 150%);
 }
 
 .inner-frame .dot:nth-child(4) {
   left: 0;
   top: 50%;
-  transform: translate(-100%, -50%);
+  transform: translate(-150%, -50%);
 }
 
 /* Lightbox */
@@ -420,5 +486,14 @@ iframe {
   }
   to {
     padding-left: 30%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0) translate(-300%, -50%);
+  }
+  to {
+    transform: rotate(360deg) translate(-300%, -50%);
   }
 }
