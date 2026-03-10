@@ -26,6 +26,7 @@ body {
   line-height: 1.6;
   color: #333;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 h1,
@@ -87,6 +88,7 @@ body {
   width: 100%;
   height: 100%;
   margin-left: 20%;
+  z-index: -1;
 }
 
 .circle-axis {
@@ -187,6 +189,11 @@ main {
   margin-bottom: 150px;
 }
 
+.menu-button,
+.close-button {
+  display: none;
+}
+
 .sidebar {
   padding: 50px 25px 0 0;
   top: 0px;
@@ -243,11 +250,14 @@ main {
 }
 
 .reel-wrapper {
+  max-width: 100%;
+  padding: 0 10px;
   text-align: center;
 }
 
 iframe {
   border-radius: 10px;
+  max-width: 100%;
 }
 
 #portfolio section {
@@ -495,5 +505,83 @@ iframe {
   }
   to {
     transform: rotate(360deg) translate(-300%, -50%);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    line-height: 50px;
+  }
+
+  .header-text-wrapper {
+    padding: 0;
+  }
+
+  .filled {
+    padding-right: 25%;
+  }
+  .outline {
+    padding-left: 25%;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  main {
+    margin-bottom: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    background-color: #ffe9cf;
+    height: 100vh;
+    width: 0%;
+    top: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 2;
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+  }
+
+  .sidebar.open {
+    width: 50%;
+    padding: 50px 25px 0 0;
+  }
+
+  .menu-button {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    font-family: "Quicksand", sans-serif;
+    z-index: 1;
+  }
+
+  .close-button {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 20px 10px 0 10px;
+  }
+
+  .portfolio-grid img {
+    max-width: 100%;
   }
 }

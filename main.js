@@ -91,3 +91,17 @@ portfolioImages.forEach((img, index) => {
     showImageAt(index);
   });
 });
+
+document.querySelector(".menu-button").addEventListener("click", () => {
+  document.querySelector(".sidebar").classList.toggle("open");
+});
+
+document.querySelector(".close-button").addEventListener("click", () => {
+  document.querySelector(".sidebar").classList.remove("open");
+});
+
+document.querySelectorAll(".sidebar a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.querySelector(".sidebar").classList.remove("open");
+  });
+});
