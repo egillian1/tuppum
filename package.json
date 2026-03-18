@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^3.0.4",
-    "sitemap-generator": "^7.5.2"
+    "browser-sync": "^3.0.4"
   }
 }
