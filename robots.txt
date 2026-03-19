@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://egillian1.github.io/tuppum/sitemap-0.xml
+Sitemap: https://egillian1.github.io/tuppum/sitemap.xml
