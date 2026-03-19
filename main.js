@@ -32,9 +32,9 @@ const portfolioImages = Array.from(
 const showImageAt = (index) => {
   if (index < 0 || index >= portfolioImages.length) return;
   currentIndex = index;
-  const img = portfolioImages[currentIndex];
-  lightboxImage.src = img.src;
-  lightboxImage.alt = img.alt || "";
+  const img = portfolioImages[currentIndex].cloneNode();
+  currentImage = document.querySelector(".lightbox-wrapper img");
+  currentImage.replaceWith(img);
   lightbox.classList.add("open");
   document.body.style.overflow = "hidden";
 };
