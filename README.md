@@ -23,3 +23,18 @@ Many video hosting services allow for unlisted videos to be uploaded. This means
 ### Making the page searchable via search engines
 
 If you would like people to be able to type in your name and search for your portfolio in e.g. Google, you will need to generate a sitemap and upload it to the search engines you want people to use. See [this guide](https://filipmikina.com/blog/github-pages-indexing) for details on how to do so.
+
+A quick rundown of this process is as follows:
+
+- Make sure `robots.txt` is configured the way you want it to be
+- Let GitHub build your page and wait for it to deploy
+- Go to a sitemap generator site such as [this one](https://www.xml-sitemaps.com/) and enter your site
+- Download the generated sitemap and place the contents in `sitemap.xml`
+- Go to the [Google Search Console](https://search.google.com/search-console/welcome)
+- Enter your portfolio as a URL prefix option
+- Copy the HTML tag option and put it in the header of `index.html`
+- Let GitHub build your page again
+- Hit the "Verify" button in Google Search Console to confirm your ownership of the site
+- Submit your sitemap through the console as well
+- At this point, you can request indexing via the console
+- Wait a little bit and your site should be search indexed soon!
