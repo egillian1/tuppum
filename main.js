@@ -8,6 +8,11 @@ lightbox.appendChild(contentWrapper);
 
 const lightboxImage = document.createElement("img");
 
+const headerAnimationClone = document
+  .getElementsByClassName("trinity-spinner")[0]
+  .cloneNode(true);
+headerAnimationClone.className = "trinity-spinner image-placeholder-spinner";
+
 const prevButton = document.createElement("button");
 prevButton.className = "lightbox-arrow left";
 prevButton.type = "button";
@@ -17,6 +22,7 @@ nextButton.className = "lightbox-arrow right";
 nextButton.type = "button";
 
 contentWrapper.appendChild(prevButton);
+contentWrapper.appendChild(headerAnimationClone);
 contentWrapper.appendChild(lightboxImage);
 contentWrapper.appendChild(nextButton);
 
@@ -40,6 +46,7 @@ const showImageAt = (index) => {
 const showNextImage = () => {
   if (portfolioImages.length === 0) return;
   showImageAt((currentIndex + 1) % portfolioImages.length);
+  loadImages();
 };
 
 const showPrevImage = () => {
@@ -47,6 +54,26 @@ const showPrevImage = () => {
   showImageAt(
     (currentIndex - 1 + portfolioImages.length) % portfolioImages.length,
   );
+  loadImages();
+};
+
+// Preload unviewed images if flipping through images in lightbox to
+// avoid loading delay
+const loadImages = () => {
+  let startTime = new Date().getTime();
+  // Only load images not scrolled to yet. We assume images 0 to i
+  // have already been viewed and loaded
+  for (let i = currentIndex; i < portfolioImages.length; i++) {
+    const img = new Image();
+    img.src = portfolioImages[i].src;
+    console.log("image loaded", portfolioImages[i]);
+
+    // Don't load images for more than 1 second at a time to avoid
+    // freezing the UI
+    if (startTime - new Date().getTime() > 1000) {
+      break;
+    }
+  }
 };
 
 const closeLightbox = () => {
