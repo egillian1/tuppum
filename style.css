@@ -1,3 +1,4 @@
+/* TODO: Consider splitting CSS into separate sheets */
 @font-face {
   font-family: "Quicksand";
   src: url("fonts/Quicksand-VariableFont_wght.ttf") format("truetype");
@@ -78,6 +79,9 @@ p {
 }
 
 /* Colors */
+
+/* TODO: Move colors to this section for easier editing for
+folks that aren't the biggest of programmers */
 
 body {
   background-color: #ffe9cf;

@@ -1,12 +1,20 @@
+<!-- TODO: Add explanation about purpose, static website, open source, etc. all the fancy buzzwords -->
+
 # tuppum
 
 A simple portfolio page, created to be easy to modify and deploy via GitHub pages. See a preview at [the associated GitHub Page](https://egillian1.github.io/tuppum/) and access the encrypted page with the password `1234`.
 
+<!-- TODO: Change headers for readme -->
+
 ## Development
 
-Files can be directly edited in any editor (including the one on GitHub) and viewed by opening the files in your browser and refreshing after a change.
+Files can be directly edited in any editor (including the one on GitHub) and viewed by opening the files in your browser and refreshing after a change (e.g. visiting `file:///C:/Location/To/Repository/tuppum/index.html` in your browser with the correct location to the `index.html` file).
 
 Alternatively if you have Node.js installed, run `npm install` in the root of the directory and then run `npm run dev` to see changes in real-time.
+
+### Changing styling, fonts, colors, etc.
+
+This is a static HTML site using basic CSS. You can change the images shown, URLs, fonts, colors, etc. Store whatever images you want to show in `images/portfolio/`. If you would like different fonts, you can download fonts from e.g. Google Fonts and place them in `fonts/`. The file `style.css` controls all of the colors, layout, animation and which fonts get used where, so feel free to edit that stylesheet to suit your needs. See sections below on some further details.
 
 ### HTML encryption
 
@@ -19,6 +27,10 @@ Since you don't want to upload your hidden images directly here in a public repo
 ### Embedding videos in the encrypted site
 
 Many video hosting services allow for unlisted videos to be uploaded. This means the video will not be searchable and can only be accessed if a person knows the direct link to said video. See [this guide](https://support.google.com/youtube/answer/157177?hl=en&co=GENIE.Platform%3DDesktop) on how to make a video on YouTube unlisted.
+
+### Hosting the page
+
+Since this is a static web page with no backend, you can use GitHub Pages to host it and make it available on the internet. The easiest thing to do is probably to clone this repository, make the changes you want and replace media, and then upload it to a GitHub repository in your account. Once you have your own repository, you can follow the [GitHub Pages quickstart guide](https://docs.github.com/en/pages/quickstart) to start making it available to others.
 
 ### Making the page searchable via search engines
 
@@ -38,3 +50,15 @@ A quick rundown of this process is as follows:
 - Submit your sitemap through the console as well
 - At this point, you can request indexing via the console
 - Wait a little bit and your site should be search indexed soon!
+
+<!-- TODO: Add further documentation for non-techies -->
+
+### Custom domain for your page
+
+If you would like a custom domain to point towards your website (e.g. you want to visit www.yournameportfolio.com), you can do so via GitHub Pages as well and follow [the guide to use your own domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site). Note that you will need to purchase a domain from somewhere like porkbun.com or namecheap.com in order to do this.
+
+### Adding icons & fonts
+
+This project uses Font Awesome as its library for icons. If you want to add more of them, visit [their website](https://fontawesome.com/search?ic=free-collection), download the free version icon you'd like as an SVG and add it to `images/icons/`.
+
+For fonts, see [Google Fonts](https://fonts.google.com/) to get different fonts for your website. Download the fonts you'd like, put them in `fonts/` and then use a `@font-face` command like in the top of `style.css` to import the font.
